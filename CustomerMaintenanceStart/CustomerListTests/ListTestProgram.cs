@@ -10,6 +10,12 @@ namespace CustomerListTests
     {
         static void Main(string[] args)
         {
+
+        }
+
+        static void TestCustomerListConstructors()
+        {
+
         }
     }
 }
