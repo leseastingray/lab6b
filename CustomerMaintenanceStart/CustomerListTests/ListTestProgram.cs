@@ -16,8 +16,8 @@ namespace CustomerListTests
             TestCustomerListConstructor();
             TestCustomerListFill();
             TestCustomerListAdd();
-            // TestCustomerListRemove();
-            // TestCustomerListIndexers();
+            TestCustomerListRemove();
+            TestCustomerListIndexers();
 
             Console.WriteLine();
             Console.ReadLine();
@@ -66,6 +66,59 @@ namespace CustomerListTests
             Console.WriteLine("Expecting count of 3 " + cList.Count);
             Console.WriteLine("Expecting list of 3 customers:\n" + cList);
             Console.WriteLine();
+        }
+
+        static void TestCustomerListRemove()
+        {
+            CustomerList cList = new CustomerList();
+            Customer c1 = new Customer("John", "Smith", "jsmith@virginia.gov");
+            Customer c3 = new Customer("Jake", "Andrews", "jandrews@dog.net");
+
+            cList.Add(c1);
+            cList.Add("Elsa", "Jacobs", "secondtestcustomer@cs.net");
+            cList += c3;
+
+            Console.WriteLine("Testing Remove");
+            Console.WriteLine("Remove");
+            cList.Remove(c1);
+            Console.WriteLine("Expecting count of 2 " + cList.Count);
+            Console.WriteLine("Expecting list of 2 customers: Removed John: \n" + cList);
+
+            cList -= c3;
+            Console.WriteLine("- operator");
+            Console.WriteLine("Expecting count of 1 " + cList.Count);
+            Console.WriteLine("Expecting list of 1 customer. Removed Jake: \n" + cList);
+            Console.WriteLine();
+
+            cList.Remove(new Customer("Elsa", "Jacobs", "secondtestcustomer@cs.net"));
+            Console.WriteLine("Remove that takes individual customer attributes and subtracts corresponding customer");
+            Console.WriteLine("Expecting count of 0 " + cList.Count);
+            Console.WriteLine("Expecting list of 0 customers. Removed Elsa: \n" + cList);
+
+        }
+
+        static void TestCustomerListIndexers()
+        {
+            CustomerList cList = new CustomerList();
+            Customer c1 = new Customer("John", "Smith", "jsmith@virginia.gov");
+            Customer c3 = new Customer("Jake", "Andrews", "jandrews@dog.net");
+
+            cList.Add(c1);
+            cList.Add("Elsa", "Jacobs", "secondtestcustomer@cs.net");
+            cList += c3;
+
+            Console.WriteLine("Testing indexer");
+            Console.WriteLine("Get product with index 0");
+            Customer p4 = cList[0];
+            Console.WriteLine("Expecting John. " + p4);
+            Console.WriteLine("Should not change list. Expecting count of 3 " + cList.Count);
+            Console.WriteLine("Expecting list of 3 customers.  John is the first element in list:\n" + cList);
+
+            Console.WriteLine("Get customer with email secondtestcustomer@cs.net");
+            Customer p5 = cList["secondtestcustomer@cs.net"];
+            Console.WriteLine("Expecting secondtestcustomer@cs.net. " + p5);
+            Console.WriteLine("Shouldn't alter the list. Expecting count of 3 " + cList.Count);
+            Console.WriteLine("Expecting list of 3 customers.  secondtestcustomer@cs.net is the second element in list:\n" + cList);
         }
     }
 }
