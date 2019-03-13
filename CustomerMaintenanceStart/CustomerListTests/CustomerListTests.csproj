@@ -49,5 +49,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomerMaintenanceClasses\CustomerMaintenanceClasses.csproj">
+      <Project>{434543e0-1055-40d3-b3bd-aed7372a5b71}</Project>
+      <Name>CustomerMaintenanceClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomerMaintenance\CustomerMaintenance.csproj">
+      <Project>{a3f58f4f-9df9-470c-84c9-8092b938f78d}</Project>
+      <Name>CustomerMaintenance</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

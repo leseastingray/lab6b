@@ -83,7 +83,7 @@ namespace CustomerMaintenanceClasses
             }
         }
 
-        // Look at this!!!! Email is a good unique key for customers
+        // Using Customer email for unique key
         public Customer this[string email]
         {
             get
@@ -97,13 +97,13 @@ namespace CustomerMaintenanceClasses
             }
         }
 
-        public static CustomerList operator +(CustomerList clist, Customer c)
+        public static CustomerList operator + (CustomerList clist, Customer c)
         {
             clist.Add(c);
             return clist;
         }
 
-        public static CustomerList operator -(CustomerList clist, Customer c)
+        public static CustomerList operator - (CustomerList clist, Customer c)
         {
             clist.Remove(c);
             return clist;
