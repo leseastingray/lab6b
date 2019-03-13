@@ -14,7 +14,7 @@ namespace CustomerListTests
             // TestCustomerAll();
 
             TestCustomerListConstructor();
-            TestCustomerListFill();
+            // TestCustomerListFill();
             TestCustomerListAdd();
             TestCustomerListRemove();
             TestCustomerListIndexers();
