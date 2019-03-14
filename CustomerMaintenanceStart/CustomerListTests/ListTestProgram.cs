@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CustomerMaintenanceClasses;
+using CustomerListTests;
 
 namespace CustomerListTests
 {
@@ -11,7 +12,7 @@ namespace CustomerListTests
     {
         static void Main(string[] args)
         {
-            // TestCustomerAll();
+            TestCustomerAll();
 
             TestCustomerListConstructor();
             // TestCustomerListFill();
@@ -89,12 +90,6 @@ namespace CustomerListTests
             Console.WriteLine("Expecting count of 1 " + cList.Count);
             Console.WriteLine("Expecting list of 1 customer. Removed Jake: \n" + cList);
             Console.WriteLine();
-
-            cList.Remove(new Customer("Elsa", "Jacobs", "secondtestcustomer@cs.net"));
-            Console.WriteLine("Remove that takes individual customer attributes and subtracts corresponding customer");
-            Console.WriteLine("Expecting count of 0 " + cList.Count);
-            Console.WriteLine("Expecting list of 0 customers. Removed Elsa: \n" + cList);
-
         }
 
         static void TestCustomerListIndexers()
@@ -119,6 +114,16 @@ namespace CustomerListTests
             Console.WriteLine("Expecting secondtestcustomer@cs.net. " + p5);
             Console.WriteLine("Shouldn't alter the list. Expecting count of 3 " + cList.Count);
             Console.WriteLine("Expecting list of 3 customers.  secondtestcustomer@cs.net is the second element in list:\n" + cList);
+        }
+
+        static void TestCustomerAll()
+        {
+            Console.WriteLine("Testing Customer Class");
+            TestCustomerListConstructor();
+            TestCustomerListAdd();
+            TestCustomerListRemove();
+            TestCustomerListIndexers();
+            Console.WriteLine();
         }
     }
 }

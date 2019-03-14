@@ -15,13 +15,7 @@ namespace CustomerMaintenanceClasses
             customers = new List<Customer>();
         }
 
-        public int Count
-        {
-            get
-            {
-                return customers.Count;
-            }
-        }
+        public int Count => customers.Count;
 
         public void Fill()
         {
