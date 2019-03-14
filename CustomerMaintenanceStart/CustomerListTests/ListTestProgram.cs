@@ -104,16 +104,10 @@ namespace CustomerListTests
 
             Console.WriteLine("Testing indexer");
             Console.WriteLine("Get product with index 0");
-            Customer p4 = cList[0];
-            Console.WriteLine("Expecting John. " + p4);
+            Customer c4 = cList[0];
+            Console.WriteLine("Expecting John. " + c4);
             Console.WriteLine("Should not change list. Expecting count of 3 " + cList.Count);
             Console.WriteLine("Expecting list of 3 customers.  John is the first element in list:\n" + cList);
-
-            Console.WriteLine("Get customer with email secondtestcustomer@cs.net");
-            Customer p5 = cList["secondtestcustomer@cs.net"];
-            Console.WriteLine("Expecting secondtestcustomer@cs.net. " + p5);
-            Console.WriteLine("Shouldn't alter the list. Expecting count of 3 " + cList.Count);
-            Console.WriteLine("Expecting list of 3 customers.  secondtestcustomer@cs.net is the second element in list:\n" + cList);
         }
 
         static void TestCustomerAll()

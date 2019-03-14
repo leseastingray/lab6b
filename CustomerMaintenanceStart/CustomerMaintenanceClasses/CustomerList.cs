@@ -51,7 +51,7 @@ namespace CustomerMaintenanceClasses
             string output = "";
             foreach (Customer c in customers)
             {
-                output += c.ToString() + "\n";
+                output += c.GetDisplayText() + "\n";
             }
             return output;
         }
@@ -102,6 +102,5 @@ namespace CustomerMaintenanceClasses
             clist.Remove(c);
             return clist;
         }
-
     }
 }
